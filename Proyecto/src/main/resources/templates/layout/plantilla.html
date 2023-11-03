@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>TICORGANIKO</title>
+        <meta charset="UTF-8" />
+        <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css" />
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+        <link th:href="@{/webjars/fontawesome/css/all.css}" rel="stylesheet" />
+        <script th:src="@{/rutinas/rutina.js}"></script>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </head>
+    <body>
+        <header th:fragment="header" class="header">
+            <nav class="navbar navbar-expand-sm navbar-dark py-2 bg-primary p-0">
+                <div class="container">
+                    <a th:href="@{/}" class="navbar-brand">[[#{aplicacion.titulo}]]</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <!-- lista de elementos de navegacion -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.catalogo}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/productos/listado}">[[#{plantilla.promociones}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/usuarios/listado}">[[#{plantilla.contactanos}]]</a></li>
+                        </ul>
+                        <!-- toogle para la busqueda en el nav (boostrap)-->
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/usuarios/listado}">[[#{plantilla.cuenta}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/usuarios/listado}">[[#{plantilla.carrito}]]</a></li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/(lang=es)}">ES</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/(lang=en)}">EN</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section id="main-header" class="py-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Titulo principal para la pagina -->
+                            <h1><i class="fas fa-cog"></i>[[#{plantilla.bannerHome}]]</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 my-2">
+                            <div class="card">
+                                <!-- Tarjeta 1 catalogo -->
+                                <img class="card-img-top" src="img/home1.jpg" alt="" />
+                                <div class="card-body">
+                                    <p class="card-text">Catalogo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <div class="card">
+                                <!-- Tarjeta 2 venta flash -->
+                                <img class="card-img-top" src="img/home2.jpeg" alt="" />
+                                <div class="card-body">
+                                    <p class="card-text">Venta Flash</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <div class="card">
+                                <!-- Tarjeta 3 promociones -->
+                                <img class="card-img-top" src="img/home3.jpeg" alt="" />
+                                <div class="card-body">
+                                    <p class="card-text">Promociones</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 4 -->
+                    <div class="card mb-3" style="max-width: 950px; margin-left: 150px; margin-top: 30px; text-align: center;">
+                        <div class="row g-0">
+                            <div class="col-md-3">
+                                <img src="img/home4.jpg" class="img-fluid rounded-start" alt="" style="max-width: 400px; max-height: 200px;">
+                            </div>
+                            <div class="col-md-3" style="width: 55.7%; margin-left: 160px; max-height: 200px; font-size: 15px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Disfruta del chocolate con Chiky.</h5>
+                                    <p class="card-text">Una crujiente galleta de vainilla con deliciosa cobertura con sabor de chocolate, La empresa Pozuelo lanzó una nueva oferta de galletas para el 2020, que incluye nuevas versiones de sus clásicas Chiky y Cremas, así como el retorno de las Toby. </p>
+                                    <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!-- footter -->
+        <footer th:fragment="footer" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="lead text-center">
+                            &copy; [[#{plantilla.derechos}]]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+

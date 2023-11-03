@@ -1,0 +1,56 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 21, 2023, 9:22:50 PM
+    Author     : ferva
+*/
+/* Comentario */
+
+.header {
+    background-color: #007BFF;
+    padding: 0px 0; /* Espaciado del encabezado */
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-nav .nav-item a {
+    font-size: 18px;
+    color: #fff;
+}
+
+#main-header {
+    background-color: #fff;
+    color: #fff;
+    padding: 10px 0; /* Espaciado de la sección principal del encabezado */
+}
+
+#main-header h1 {
+    font-size: 27px;
+    color: #000;
+    margin-top: 35px; /* Margen superior del ttulo principal */
+}
+
+.footer {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 0; /* Espaciado del pie de página */
+}
+
+.card {
+    text-align: left; /* Alineación del texto en las tarjetas */
+    margin-top: 10px; /* Margen superior entre las tarjetas */
+    font-size: 17px; /* Tamaño de fuente en las tarjetas */
+}
+
+.card-container {
+    margin: 20px auto;
+}
+
+.form-inline {
+    width: 30%; /* Ancho del formulario en línea */
+}
+

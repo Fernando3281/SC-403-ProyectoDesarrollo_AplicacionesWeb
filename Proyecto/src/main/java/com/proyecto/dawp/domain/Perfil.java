@@ -13,17 +13,16 @@ import lombok.Data;
  *
  * @author ferva
  */
-
 @Data
 @Entity
-@Table(name="clientes")//TABLA DE PRUEBA
-public class Perfil implements Serializable{
-    
+@Table(name = "clientes")//TABLA DE CLIENTES
+public class Perfil implements Serializable {
+
     private static final long serialVersionUID = 1L;//esta linea funciona como auto increment para la tabla
-    
+
     @Id //tabla clientes tiene un identificador que va a ser el id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)// los valores generados que tipo de estrategia utilizan, identico = sea igual en BD y en la clase
-    @Column(name="id_cliente")//identifica cual es el numbre en la base de datos
+    @GeneratedValue(strategy = GenerationType.IDENTITY)// los valores generados que tipo de estrategy utilizan, identico = sea igual en BD y en la clase
+    @Column(name = "id_cliente")//identifica cual es el numbre en la base de datos
     private long idCliente;
     private String nombre;
     private String correo;
@@ -31,14 +30,11 @@ public class Perfil implements Serializable{
     private String direccion;
     private int cedula;
     private String contraseña;
-    private boolean activo;
 
     public Perfil() {
     }
 
-    public Perfil(String nombre, boolean activo) {
+    public Perfil(String nombre) {
         this.nombre = nombre;
-        this.activo = activo;
     }
-    
 }

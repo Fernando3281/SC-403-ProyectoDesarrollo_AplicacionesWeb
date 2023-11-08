@@ -12,27 +12,22 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author ferva
  */
-
 @Service
 public class PerfilServiceImpl implements PerfilService {
-    
+
     @Autowired
     private PerfilDao perfilDao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Perfil> getPerfiles(boolean activos) {
-        var lista = perfilDao.findAll();
-        if (activos) {
-            lista.removeIf(e -> !e.isActivo());
-        }
-        return lista;
+    public List<Perfil> getPerfiles() {
+        return perfilDao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Perfil getPerfil(Perfil perfil) {
-        return perfilDao.findById(perfil.getIdCliente()).orElse(null);
+    public Perfil getPerfil(long id) {
+        return perfilDao.findById(id).orElse(null);
     }
 
     @Override
@@ -43,8 +38,8 @@ public class PerfilServiceImpl implements PerfilService {
 
     @Override
     @Transactional
-    public void delete(Perfil perfil) {
-        perfilDao.delete(perfil);
+    public void delete(long id) {
+        perfilDao.deleteById(id);
     }
-    
+
 }

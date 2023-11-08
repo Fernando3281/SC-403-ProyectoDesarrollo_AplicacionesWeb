@@ -1,4 +1,4 @@
-package com.proyecto.dawp.controller;
+package com.proyecto.dawp.controlador;
 
 import com.proyecto.dawp.domain.Perfil;
 import com.proyecto.dawp.domain.Perfil;
@@ -18,28 +18,25 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author ferva
  */
-
-
 @Controller
 @Slf4j
 @RequestMapping("/perfil")
 public class PerfilControlador {
-    
+
     @Autowired
     private PerfilService perfilService;
 
-    @GetMapping("/userPage")
+    @GetMapping("/usuarioPanel")
     public String inicio(Model model) {
-        var perfiles = perfilService.getPerfiles(false);
+        var perfiles = perfilService.getPerfiles();
         model.addAttribute("perfiles", perfiles);
         model.addAttribute("totalPerfiles", perfiles.size());
-        return "/perfil/userPage";
+        return "/perfil/usuarioPanel";
     }
-    
+
     @GetMapping("/nuevo")
     public String perfilNuevo(Perfil perfil) {
         return "/perfil/modifica";
     }
 
-    
 }

@@ -7,20 +7,17 @@ import java.util.List;
  *
  * @author ferva
  */
-
 public interface PerfilService {
-    
-    // Se obtiene un listado de perfiles en un List
-    public List<Perfil> getPerfiles(boolean activos);
-    
-   // Se obtiene un Perfil, a partir del id de un perfil
-    public Perfil getPerfil(Perfil perfil);
-    
-    // Se inserta un nuevo perfil si el id del perfil esta vacío
-    // Se actualiza un perfil si el id del perfil NO esta vacío
+
+    // Obtener un listado de perfiles
+    public List<Perfil> getPerfiles();
+
+    // Obtener un Perfil por ID
+    public Perfil getPerfil(long id);
+
+    // Guardar o actualizar un perfil
     public void save(Perfil perfil);
-    
-    // Se elimina el perfil que tiene el id pasado por parámetro
-    public void delete(Perfil perfil);
-    
+
+    // Eliminar un perfil por ID
+    public void delete(long id);
 }

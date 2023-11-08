@@ -14,7 +14,7 @@
 	<name>proyecto</name>
 	<description>SC-403-ProyectoDesarrollo de Aplicaciones Web</description>
 	<properties>
-		<java.version>20</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

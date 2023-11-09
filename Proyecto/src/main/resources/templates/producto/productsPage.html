@@ -6,7 +6,54 @@
     </head>
     <body>
         <header th:replace= "~{layout/plantilla ::header}"/>
-        <div><h1>*PAGINA DE PRODUCTOS</h1></div>
+        
+        <section th:fragment="PanelProducto" id="main-header" class="py-0">           
+            <div class="container" style ="margin-top: 10px;">
+                <div class="row">
+                    <div id="tarjetas-section" class="col-md-6" style ="margin-bottom: 20px;">
+                        <h1><i class="fas fa-cog"></i>[[#{plantilla.catalogo}]]</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                      <div class="card">
+                            <img class="card-img-top" src="https://www.superaki.mx/cdn/shop/collections/DULCES.png?v=1634682356" alt="" width="300" height="150"/>
+                            <div class="card-body">
+                                <p class="card-text">Dulces</p>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="https://blog.iniciativasempresariales.com/wp-content/uploads/2021/11/Caracteristicas_Tratamiento_Agua_elaboracion_bebidas_alcohol.jpg" alt="" width="300" height="150"/>
+                            <div class="card-body">
+                                <p class="card-text">Bebidas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                                <img class="card-img-top" src="https://cloudfront-us-east-1.images.arcpublishing.com/gruponacion/6EONPOUOJNHWXPLT7OTC7UP2I4.jpg" alt="" width="300" height="150"/>
+                                <div class="card-body">
+                                    <p class="card-text">Cereales</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                                <img class="card-img-top" src="https://www.loreki.com/wp-content/uploads/2014/09/frutas.propiedades.jpg" alt="" width="300" height="150"/>
+                                <div class="card-body">
+                                    <p class="card-text">Frutas</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>    
+        </section>            
+        </section>    
+                
+
+                
         <footer th:replace= "~{layout/plantilla ::footer}"/>
     </body>
 </html>

@@ -39,5 +39,3 @@ public class Promocion implements Serializable{
     }
     
 }
-
-//test

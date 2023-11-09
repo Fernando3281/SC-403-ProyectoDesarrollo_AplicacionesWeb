@@ -38,5 +38,4 @@ public class PerfilControlador {
     public String perfilNuevo(Perfil perfil) {
         return "/perfil/modifica";
     }
-
 }

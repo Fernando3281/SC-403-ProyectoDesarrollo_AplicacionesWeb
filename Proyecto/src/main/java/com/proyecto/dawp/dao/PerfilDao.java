@@ -1,12 +1,12 @@
 package com.proyecto.dawp.dao;
 
-import com.proyecto.dawp.domain.Rol;
+import com.proyecto.dawp.domain.Perfil;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author ferva
  */
-public interface RolDao extends JpaRepository<Rol, Long> {
-
+public interface PerfilDao extends JpaRepository <Perfil, Long> {
+    
 }

@@ -1,3 +1,5 @@
+/*ACTUALIZADO 16-11-23*/
+
 /*Se crea la base de datos */
 drop schema if exists ticorganiko;
 drop user if exists usuario;
@@ -24,7 +26,7 @@ CREATE TABLE ticorganiko.productos (
 ) ENGINE = InnoDB;
 
 -- Crear la tabla de clientes
-CREATE TABLE ticorganiko.clientes(
+CREATE TABLE ticorganiko.clientes (
   id_cliente INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(30),
   correo VARCHAR(50),
@@ -32,44 +34,44 @@ CREATE TABLE ticorganiko.clientes(
   direccion VARCHAR(50),
   cedula INT NOT NULL,
   contraseña VARCHAR(15),
+  ruta_imagen VARCHAR(1024),
   activo BOOLEAN,
   PRIMARY KEY (id_cliente)
 ) ENGINE = InnoDB;
 
+-- Crear la tabla de facturas
+CREATE TABLE ticorganiko.facturas (
+  id_factura INT NOT NULL AUTO_INCREMENT,
+  id_cliente INT NOT NULL,
+  fecha DATE,
+  total DECIMAL(10, 2),
+  estado INT,
+  PRIMARY KEY (id_factura),
+  FOREIGN KEY fk_factura_cliente (id_cliente) REFERENCES clientes(id_cliente)
+) ENGINE = InnoDB;
+
 -- Crear la tabla de historial de compras de clientes
 CREATE TABLE ticorganiko.historial_cliente (
-    id_compra INT NOT NULL AUTO_INCREMENT,
-    id_cliente INT NOT NULL,
-    id_factura INT NOT NULL,
-    fecha_compra DATE,
-    monto_total DECIMAL(10, 2),
-    productos_comprados TEXT,
-    PRIMARY KEY (id_compra),
-    FOREIGN KEY (id_cliente) REFERENCES ticorganiko.clientes(id_cliente)
+  id_compra INT NOT NULL AUTO_INCREMENT,
+  id_factura INT NOT NULL,
+  fecha_compra DATE,
+  monto_total DECIMAL(10, 2),
+  productos_comprados TEXT,
+  PRIMARY KEY (id_compra),
+  FOREIGN KEY (id_factura) REFERENCES ticorganiko.facturas(id_factura)
 ) ENGINE = InnoDB;
 
 -- Crear la tabla de promociones
 CREATE TABLE ticorganiko.promociones (
-	id_promocion INT NOT NULL AUTO_INCREMENT,
-    descripcion VARCHAR(30),
-    precio DECIMAL(10, 2) NOT NULL,
-    cantidad INT NOT NULL,
-    activo BOOLEAN,
-	ruta_imagen VARCHAR(1024),
-	PRIMARY KEY (id_promocion)
-) ENGINE = InnoDB;
-
-CREATE TABLE ticorganiko.articulo (
-  id_articulo INT NOT NULL AUTO_INCREMENT,
-  descripcion VARCHAR(100) NOT NULL,
-  codigo VARCHAR(10),
+  id_promocion INT NOT NULL AUTO_INCREMENT,
+  descripcion VARCHAR(30),
   precio DECIMAL(10, 2) NOT NULL,
   cantidad INT NOT NULL,
-  promocion INT,
   activo BOOLEAN,
   ruta_imagen VARCHAR(1024),
-  PRIMARY KEY (id_articulo)
+  PRIMARY KEY (id_promocion)
 ) ENGINE = InnoDB;
+
 
 /*create table ticorganiko.ventas (
   id_venta INT NOT NULL AUTO_INCREMENT,

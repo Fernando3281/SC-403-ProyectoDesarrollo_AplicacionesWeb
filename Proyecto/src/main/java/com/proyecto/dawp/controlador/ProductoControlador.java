@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
  * @author ferva
  */
 
-
 @Controller
 @Slf4j
 @RequestMapping("/producto")
@@ -40,6 +39,4 @@ public class ProductoControlador {
     public String productoNuevo(Producto producto) {
         return "/producto/modifica";
     }
-
-    
 }

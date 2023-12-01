@@ -7,24 +7,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
-
-/**
- *
- * @author ferva
- */
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 @Data
 @Entity
-@Table(name="productos")//TABLA DE PRUEBA
-public class Producto implements Serializable{
-    
+@Table(name = "articulo")//TABLA DE CLIENTES
+public class Articulo implements Serializable {
+
     private static final long serialVersionUID = 1L;//esta linea funciona como auto increment para la tabla
-    
-    @Id //tabla productos tiene un identificador que va a ser el id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)// los valores generados que tipo de estrategia utilizan, identico = sea igual en BD y en la clase
-    @Column(name="id_producto")//identifica cual es el numbre en la base de datos
-    private long idProducto;
+
+    @Id //tabla clientes tiene un identificador que va a ser el id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)// los valores generados que tipo de estrategy utilizan, identico = sea igual en BD y en la clase
+    @Column(name = "id_articulo")//identifica cual es el numbre en la base de datos
+    private long idArticulo;
     private String descripcion;
     private String codigo;
     private double precio;
@@ -32,12 +30,13 @@ public class Producto implements Serializable{
     private int promocion;
     private boolean activo;
 
-    public Producto() {
+    public Articulo() {
     }
 
-    public Producto(String descripcion, boolean activo) {
+    public Articulo(String descripcion) {
         this.descripcion = descripcion;
-        this.activo = activo;
     }
+    
+   
     
 }

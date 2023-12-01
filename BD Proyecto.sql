@@ -59,6 +59,18 @@ CREATE TABLE ticorganiko.promociones (
 	PRIMARY KEY (id_promocion)
 ) ENGINE = InnoDB;
 
+CREATE TABLE ticorganiko.articulo (
+  id_articulo INT NOT NULL AUTO_INCREMENT,
+  descripcion VARCHAR(100) NOT NULL,
+  codigo VARCHAR(10),
+  precio DECIMAL(10, 2) NOT NULL,
+  cantidad INT NOT NULL,
+  promocion INT,
+  activo BOOLEAN,
+  ruta_imagen VARCHAR(1024),
+  PRIMARY KEY (id_articulo)
+) ENGINE = InnoDB;
+
 /*create table ticorganiko.ventas (
   id_venta INT NOT NULL AUTO_INCREMENT,
   id_producto INT NOT NULL,
